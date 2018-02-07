@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="582.0" prefWidth="395.0" style="-fx-background-color:black;&#10;-fx-background-radius: 25;&#10;-fx-padding: 10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="fxcalculator.FXMLDocumentController">
+  <children>
+    <HBox alignment="CENTER" fillHeight="true" layoutX="14.0" layoutY="128.0" prefHeight="98.0" prefWidth="367.0" style="-fx-background-color:black;&#10;" visible="true">
+      <children>
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="7" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="8" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="9" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" style="-fx-background-color:orange;&#10;&#10;" text="X" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" layoutX="14.0" layoutY="242.0" prefHeight="98.0" prefWidth="367.0" style="-fx-background-color:black;">
+      <children>
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="4" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="5" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="6" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" style="-fx-background-color:orange;&#10;" text="/" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" layoutX="14.0" layoutY="359.0" prefHeight="98.0" prefWidth="367.0" style="-fx-background-color:black;">
+      <children>
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="1" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="2" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="3" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" style="-fx-background-color:orange;" text="-" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" layoutX="14.0" layoutY="470.0" prefHeight="98.0" prefWidth="367.0" style="-fx-background-color:black;">
+      <children>
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" style="-fx-background-radius: 0 0 0 25;" text="0" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" text="." />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" style="-fx-background-color:green;" text="=" />
+        <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="74.0" style="-fx-background-radius: 0 0 25 0;" text="+" />
+      </children>
+    </HBox>
+    <VBox alignment="TOP_RIGHT" layoutX="50.0" layoutY="56.0" prefHeight="72.0" prefWidth="293.0000999999975" />
+    <Button layoutX="330.0" layoutY="14.0" minHeight="28.0" minWidth="38.0" mnemonicParsing="false" onAction="#exitCalculator" prefHeight="42.000099999997474" prefWidth="51.0" text="X" textFill="#ff3333">
+      <font>
+        <Font size="18.0" />
+      </font>
+    </Button>
+  </children>
+</AnchorPane>
