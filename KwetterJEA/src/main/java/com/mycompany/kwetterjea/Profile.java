@@ -25,16 +25,24 @@ public class Profile {
         return Image;
     }
 
-    public void setImage(BufferedImage Image) {
-        this.Image = Image;
+    public boolean setImage(BufferedImage Image) {
+        if(!Image.equals(null)){
+            this.Image = Image; 
+            return true;
+        }
+        return false;
     }
 
     public String getBio() {
         return Bio;
     }
 
-    public void setBio(String Bio) {
-        this.Bio = Bio;
+    public boolean setBio(String Bio) {
+        if(Bio.length() <= 160){
+            this.Bio = Bio; 
+            return true;
+        }
+        return false;
     }
 
     public String getLocation() {

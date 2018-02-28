@@ -4,12 +4,17 @@
  * and open the template in the editor.
  */
 
+import com.mycompany.kwetterjea.Profile;
 import com.mycompany.kwetterjea.User;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+import javax.imageio.ImageIO;
 import static org.junit.Assert.*;
 
 /**
@@ -45,7 +50,17 @@ public class ModelTest {
         assertEquals(username, user.getUsername());
     }
     
-    public void changeImage(){
+    public void changeImage() throws IOException{
+        InputStream is = getClass().getResourceAsStream("/car0.jpg");
+        BufferedImage image = ImageIO.read(is);
+        User user = new User();
+        Profile profile = new Profile();
+        user.setAccount(profile);
+        profile.setImage(image);
+        assertEquals(user.getAccount().getImage(), image);
+    }
+    
+    public void addBio(){
         
     }
 }

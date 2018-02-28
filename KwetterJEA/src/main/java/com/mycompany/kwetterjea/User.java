@@ -5,6 +5,8 @@
  */
 package com.mycompany.kwetterjea;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -16,6 +18,7 @@ public class User {
     private Role Role;
     private Profile Account;
     private List<User> Followers;
+    private List<Tweet> Tweets;
     
     public User(){
         
@@ -26,7 +29,7 @@ public class User {
     }
 
     public void setUsername(String Username) {
-        this.Username = Username;
+        this.Username = Username;  
     }
 
     public Role getRole() {
@@ -51,5 +54,22 @@ public class User {
 
     public void setFollowers(List<User> Followers) {
         this.Followers = Followers;
+    }
+    
+    public List<Tweet> getTweets() {
+        return Tweets;
+    }
+
+    public void setTweets(List<Tweet> Tweets) {
+        this.Tweets = Tweets;
+    }
+    
+    public List<Tweet> getRecentTweets(){
+        List<Tweet> recentTweets = this.Tweets;
+        Collections.sort(recentTweets, Comparator.comparing(Tweet::getTimeStamp));
+        if(recentTweets.size() <= 10){
+            return recentTweets;
+        }
+        return recentTweets.subList(0, 9);
     }
 }

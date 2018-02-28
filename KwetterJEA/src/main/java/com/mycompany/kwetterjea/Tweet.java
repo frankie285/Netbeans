@@ -13,7 +13,6 @@ import java.util.List;
  * @author Frank
  */
 public class Tweet {
-    private User Composer;
     private String Text;
     private List<User> Likers;
     private List<User> Mentions;
@@ -21,14 +20,6 @@ public class Tweet {
     
     public Tweet(){
         
-    }
-   
-    public User getComposer() {
-        return Composer;
-    }
-
-    public void setComposer(User Composer) {
-        this.Composer = Composer;
     }
 
     public String getText() {
