@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import com.mycompany.kwetterjea.User;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -36,9 +37,15 @@ public class ModelTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void changeUsername() {
+        User user = new User();
+        String username = "frankie";
+        user.setUsername(username);
+        assertEquals(username, user.getUsername());
+    }
+    
+    public void changeImage(){
+        
+    }
 }
