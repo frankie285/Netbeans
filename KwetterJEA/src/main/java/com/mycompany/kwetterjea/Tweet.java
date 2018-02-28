@@ -26,8 +26,12 @@ public class Tweet {
         return Text;
     }
 
-    public void setText(String Text) {
-        this.Text = Text;
+    public boolean setText(String Text) {
+        if(Text.length() <= 140){
+            this.Text = Text; 
+            return true;
+        }
+        return false;
     }
 
     public List<User> getLikers() {

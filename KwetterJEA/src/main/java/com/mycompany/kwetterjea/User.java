@@ -64,6 +64,10 @@ public class User {
         this.Tweets = Tweets;
     }
     
+    public void addTweet(Tweet tweet){
+        this.Tweets.add(tweet);
+    }
+    
     public List<Tweet> getRecentTweets(){
         List<Tweet> recentTweets = this.Tweets;
         Collections.sort(recentTweets, Comparator.comparing(Tweet::getTimeStamp));

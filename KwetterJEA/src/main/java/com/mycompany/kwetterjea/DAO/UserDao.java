@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.kwetterjea;
+package com.mycompany.kwetterjea.DAO;
 
+import com.mycompany.kwetterjea.User;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,6 +38,12 @@ public class UserDao {
     }
     
     public List<User> getFollowing(User user){
-        
+        List<User> following = new ArrayList<>();
+        for(User u : Users){
+            if(u.getFollowers().contains(user)){
+                following.add(u);
+            }
+        }
+        return following;
     }
 }
