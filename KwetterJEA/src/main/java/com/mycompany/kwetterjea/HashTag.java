@@ -35,4 +35,7 @@ public class HashTag {
         this.Tweets = Tweets;
     }
     
+    public void addTweet(Tweet tweet){
+        this.Tweets.add(tweet);
+    }
 }

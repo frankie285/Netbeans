@@ -3,22 +3,48 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.kwetterjea;
+package domain;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Frank
  */
-public class User {
+@Entity
+@NamedQueries({
+    @NamedQuery(name = "user.findByUsername", query = "SELECT s FROM User s WHERE s.Username = :Username")})
+
+@XmlRootElement
+public class User implements Serializable{  
+    @Id
     private String Username;
+    @ManyToOne
     private Role Role;
+    @OneToOne
     private Profile Account;
+    
+    @ManyToMany
     private List<User> Followers;
+    
+    
+    @OneToMany
     private List<Tweet> Tweets;
     
     public User(){
-        
+        Followers = new ArrayList<>();
+        Tweets = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -28,7 +54,7 @@ public class User {
     public void setUsername(String Username) {
         this.Username = Username;  
     }
-
+    
     public Role getRole() {
         return Role;
     }
@@ -36,7 +62,7 @@ public class User {
     public void setRole(Role Role) {
         this.Role = Role;
     }
-
+    
     public Profile getAccount() {
         return Account;
     }
@@ -44,13 +70,17 @@ public class User {
     public void setAccount(Profile Account) {
         this.Account = Account;
     }
-
+    
     public List<User> getFollowers() {
         return Followers;
     }
 
     public void setFollowers(List<User> Followers) {
         this.Followers = Followers;
+    }
+    
+    public void addFollower(User follower){
+        this.Followers.add(follower);
     }
     
     public List<Tweet> getTweets() {

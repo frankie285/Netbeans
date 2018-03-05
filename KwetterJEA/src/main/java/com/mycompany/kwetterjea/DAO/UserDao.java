@@ -28,13 +28,13 @@ public class UserDao {
         this.Users = Users;
     }
     
-    public boolean userExists(String username){
+    public User getUserByUsername(String username){
         for(User u : Users){
             if(u.getUsername().equals(username)){
-                return true;
+                return u;
             }
         }
-        return false;
+        return null;
     }
     
     public List<User> getFollowing(User user){

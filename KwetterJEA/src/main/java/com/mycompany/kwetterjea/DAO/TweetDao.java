@@ -6,7 +6,10 @@
 package com.mycompany.kwetterjea.DAO;
 
 import com.mycompany.kwetterjea.Tweet;
+import com.mycompany.kwetterjea.User;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -28,7 +31,7 @@ public class TweetDao {
         this.Tweets = Tweets;
     }
     
-    public List<Tweet> searchTweets(String query){
+    public List<Tweet> getTweetsByQuery(String query){
         List<Tweet> results = new ArrayList<>();
         for(Tweet tweet : Tweets){
             if(tweet.getText().toLowerCase().contains(query.toLowerCase())){
@@ -36,5 +39,15 @@ public class TweetDao {
             }
         }
         return results;
+    }
+    
+    public List<Tweet> getMentionedTweets(User user){
+        List<Tweet> mentioned = new ArrayList<>();
+        for(Tweet tweet : this.Tweets){
+            if(tweet.getMentions().contains(user)){
+                mentioned.add(tweet);
+            }
+        }
+        return mentioned;
     }
 }
